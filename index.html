@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruuning Notes</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="calendar.css" />
+    <link rel="stylesheet" href="modal.css" />
+
+</head>
+
+<body>
+    <div class="modal hidden">
+        <div class="bg"></div>
+        <div class="modalBox">
+            <form class="form" action="" method="get">
+                <div class="modalBox_main">
+                    <p class="form_title">날짜</p>
+                    <input type="date" id="date" required>
+                    <p class="form_title">거리</p>
+                    <input type="text" id="distance" value="0.0" min="0" required>
+                    <p>킬로미터</p>
+                    <p class="form_title">평균페이스</p>
+                    <input type="number" id="paceMinute" value="0" min="0" required>
+                    <p>'</p> <input type="number" id="paceSecond" value="00" min="00" max="59" required>
+                    <p>"</p>
+                    <p class="form_title">시간</p>
+                    <input type="number" id="timeHour" value="0" min="0" required>
+                    <p>:</p> <input type="number" id="timeMinute" value="00" min="00" max="59" required>
+                    <p>:</p> <input type="number" id="timeSecond" value="00" min="00" max="59" required>
+
+                </div>
+
+                <div class="modalBox_footer">
+                    <button class="closeBtn">취소</button>
+                    <button type="submit" value="submit" class="confirmBtn">확인</button>
+                </div>
+
+            </form>
+
+
+
+        </div>
+    </div>
+    <div id="container">
+        <!-- 모달 창  -->
+
+        <!-- 모달 창  -->
+        <div class="header">
+            <div class="header__deco">
+                <span class="header__deco__close-btn"></span>
+                <span class="header__deco__close-btn"></span>
+                <span class="header__deco__close-btn"></span>
+            </div>
+
+            <p id="title">Running </p>
+            <div class="header__deco transperate">
+                <span class="header__deco__close-btn"></span>
+                <span class="header__deco__close-btn"></span>
+                <span class="header__deco__close-btn"></span>
+            </div>
+        </div>
+
+        <div class="main">
+            <div id="container_note">
+                <!-- <h1 id="title">Running </h1> -->
+                <div id="container_note_sum">
+                    <div class="summary ">
+                        <div class="note_sum" id="total_distance"></div>
+                        <div class="note_sum" id="total_run"></div>
+                        <div class="note_sum" id="avg_pace"></div>
+                        <div class="note_sum" id="total_times"></div>
+                    </div>
+                    <div class="summary">
+                        <div class="note_sum gray" id="total_distance_kr">킬로미터</div>
+                        <div class="note_sum gray" id="total_run_kr">러닝</div>
+                        <div class="note_sum gray" id="avg_pace_kr">평균 페이스</div>
+                        <div class="note_sum gray" id="total_times_kr">시간</div>
+                    </div>
+
+
+                </div>
+
+
+                <div id="container_calendar">
+                    <table class="Calendar">
+                        <thead>
+                            <tr>
+                                <td onClick="prevCalendar();" style="cursor:pointer;">&#60;</td>
+                                <td colspan="5">
+                                    <span id="calYear"></span>년
+                                    <span id="calMonth"></span>월
+                                </td>
+                                <td onClick="nextCalendar();" style="cursor:pointer;">&#62;</td>
+                            </tr>
+                            <tr>
+                                <td>일</td>
+                                <td>월</td>
+                                <td>화</td>
+                                <td>수</td>
+                                <td>목</td>
+                                <td>금</td>
+                                <td>토</td>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+
+
+            </div>
+
+            <div id="container_add">
+                <div id="container_add_scroll">
+                    <div class="container_addBtn">
+                        <button class="addBtn">추가하기</button>
+                    </div>
+                    <ul class="records_container">
+                        <!-- <li class="record_container">
+                                <p class="form_title">날짜</p>
+                                <p class="form_content">2023/2/21</p>
+                                <p class="form_title">거리</p>
+                                <p class="form_content">6.20km</p>
+                                <p class="form_title">평균 페이스</p>
+                                <p class="form_content">6'33"</p>
+                                <p class="form_title">시간</p>
+                                <p class="form_content">40:35</p>
+        
+                            </li>
+                            <li class="record_container">
+                                <p class="form_title">날짜</p>
+                                <p class="form_content">2023/2/21</p>
+                                <p class="form_title">거리</p>
+                                <p class="form_content">6.20km</p>
+                                <p class="form_title">평균 페이스</p>
+                                <p class="form_content">6'33"</p>
+                                <p class="form_title">시간</p>
+                                <p class="form_content">40:35</p>
+        
+                            </li> -->
+                    </ul>
+
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+</body>
+
+<script src="data.js"></script>
+<!-- <script src="modal.js"></script> -->
+<script src="script.js"></script>
+<script src="calendar.js"></script>
+
+
+</html>

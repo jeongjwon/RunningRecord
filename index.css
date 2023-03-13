@@ -1,0 +1,195 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(0, 248, 125, 0.4) ;
+    overflow-y: hidden;
+
+}
+
+
+
+/* container자식 > container_note + container_add */
+div.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    border: 0.3rem solid #2e2e2e;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+}
+div.header > p{
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2e2e2e;
+
+}
+.header__deco {
+    /* position: absolute; */
+    display: flex;
+    /* 사용법 : @include mq(화면 너비, min/max(선택), width/height(선택)) */
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+  }
+.header__deco__close-btn {
+    /* display: block; */
+    width: 1em;
+    height: 1rem;
+    margin-right: 0.5rem;
+    border: 0.2rem solid #2e2e2e;
+    border-radius: 50%;
+}
+.header__deco__close-btn:nth-child(1) {
+    background-color: #fb5f5f;
+}
+.header__deco__close-btn:nth-child(2) {
+    background-color: #fbcf5f;
+}
+.header__deco__close-btn:nth-child(3) {
+    background-color: #34c900;
+}
+@media only screen and (min-width: 768px){
+    .header__deco{
+        top: 0.7rem;
+        left: 2rem;
+    } 
+}
+.transperate > .header__deco__close-btn{
+    background-color: transparent;
+    border : none;
+}
+
+div#container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
+    background-color: white;
+
+}
+.main{
+    display: flex;
+    flex-direction: row;
+    border: 0.3rem solid #2e2e2e;
+    border-top: none;
+}
+div#container_note{
+    width: 40rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-right: 0.3rem solid #2e2e2e;
+}
+
+div#container_add{
+    background : #EEEEEE;
+    border-bottom-right-radius: 12px;
+    padding: 1rem 0 0.8rem 1rem ;
+    width: 18rem;
+    flex-direction: column;
+    justify-content: center;
+    display: block;
+
+}
+div#container_add_scroll{
+    overflow-y:scroll;
+    height: 40rem;
+
+}
+
+#container_note_sum{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: none;
+}
+.gray{
+    color: darkgray;
+}
+div.summary{
+    display:flex;
+    text-align: center;
+    border : none;
+}
+div.summary:first-child{
+    font-size:1.5rem;
+}
+div.note_sum{
+    border:none;
+    flex : 1 0 0;
+    padding: 0.2rem;
+}
+
+#container_calendar{
+    border: none;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+
+}
+
+.container_addBtn{
+    display: flex;
+    justify-content: flex-end;
+    margin: 0.5rem 1rem 0.5rem 0;
+
+
+}
+button{
+    border-radius: 4px;
+    background-color: rgba(0, 248, 125, 0.6) ;
+    height: 2rem;
+    width: 5rem;
+    border: none;    
+}
+
+li.record_container{
+    display: flex;
+    flex-direction: column;
+    /* border: 0.1rem solid #2e2e2e; */
+    width: 16rem;
+    border-radius: 8px;;
+    padding: 0.5rem;
+    margin: 0.8rem 0;
+    background-color: white;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
+    
+}
+
+li.record_container > div{
+    padding: 0.2rem;
+} 
+.record_date_content{
+    font-size: 1rem;
+}
+.record, .unit{
+    display: flex;
+    justify-content: space-between;
+}
+.unit > p , .record_detail_date{
+    font-size: 0.8rem;
+}
+.record_container>p{
+    padding: 0.2rem;
+}
+p.form_title{
+   flex : 0 0 40%;
+}
+p.form_content{
+    text-align: center;
+    flex: 0 0 60%;
+
+}
